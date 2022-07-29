@@ -1,0 +1,383 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "coca cola",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "eso es todo"
+          ]
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hola",
+            "como estás",
+            "di hola mundo",
+            "di hola",
+            "hola mundo"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "OrderIntent",
+          "slots": [
+            {
+              "name": "Producto",
+              "type": "productos"
+            },
+            {
+              "name": "Numero",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{Numero} por favor",
+                "con {Numero} es suficiente",
+                "{Numero}"
+              ]
+            }
+          ],
+          "samples": [
+            "una caja de {Producto}",
+            "paquete de {Producto} ",
+            "realizar un pedido",
+            "ordenar",
+            "{Numero} garrafones",
+            "Que quiero {Numero} garrafones",
+            "Quiero {Numero}  garrafones",
+            "Quiero hacer un pedido ",
+            "Reordenar"
+          ]
+        },
+        {
+          "name": "PastOrdersIntent",
+          "slots": [],
+          "samples": [
+            "cuando fue mi ultimo pedido",
+            "que pedi la semana pasada",
+            "Cuales han sido mis pedidos"
+          ]
+        },
+        {
+          "name": "OrderSatusIntent",
+          "slots": [],
+          "samples": [
+            "cual es el estatus de mi orden",
+            "cuando llega mi orden",
+            "Como va mi orden"
+          ]
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": [
+            "sip",
+            "si"
+          ]
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": [
+            "nel",
+            "nop",
+            "no"
+          ]
+        },
+        {
+          "name": "GetAdressIntent",
+          "slots": [
+            {
+              "name": "calle",
+              "type": "AMAZON.StreetName",
+              "samples": [
+                "en {calle}",
+                "{calle}"
+              ]
+            },
+            {
+              "name": "numero",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{numero}"
+              ]
+            },
+            {
+              "name": "ciudad",
+              "type": "AMAZON.City",
+              "samples": [
+                "{ciudad}"
+              ]
+            }
+          ],
+          "samples": [
+            "{calle} {numero}  {ciudad} "
+          ]
+        },
+        {
+          "name": "OrderlAlchoholIntent",
+          "slots": [
+            {
+              "name": "bebida",
+              "type": "BebidaSlotValue",
+              "samples": [
+                "{bebida}"
+              ]
+            }
+          ],
+          "samples": [
+            "dame un {bebida}",
+            "bebidas con alcohol",
+            "bebidas con alcóhol",
+            "cuál es el menu de bebidad alcóholicas"
+          ]
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ResumeIntent",
+          "samples": []
+        },
+        {
+          "name": "pepsiIntent",
+          "slots": [],
+          "samples": [
+            "pepsi",
+            "una pepsi",
+            "quiero ordenar una pepsi"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "leche santa clara"
+              }
+            },
+            {
+              "name": {
+                "value": "coca cola clásico"
+              }
+            },
+            {
+              "name": {
+                "value": "agua mineral topo chico"
+              }
+            },
+            {
+              "name": {
+                "value": "garrafón",
+                "synonyms": [
+                  "garrafones"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "ades",
+                "synonyms": [
+                  "jugo de manzana"
+                ]
+              }
+            }
+          ],
+          "name": "productos"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "ron"
+              }
+            },
+            {
+              "name": {
+                "value": "vodka"
+              }
+            },
+            {
+              "name": {
+                "value": "tequila"
+              }
+            }
+          ],
+          "name": "BebidaSlotValue"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "OrderIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "Producto",
+              "type": "productos",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.50283665030.54430202611"
+              }
+            },
+            {
+              "name": "Numero",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.197763135278.777648123472"
+              }
+            }
+          ]
+        },
+        {
+          "name": "GetAdressIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.1352392906182"
+          },
+          "slots": [
+            {
+              "name": "calle",
+              "type": "AMAZON.StreetName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1352392906182.876738286032"
+              }
+            },
+            {
+              "name": "numero",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1352392906182.211969193767"
+              }
+            },
+            {
+              "name": "ciudad",
+              "type": "AMAZON.City",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1352392906182.1239817862536"
+              }
+            }
+          ]
+        },
+        {
+          "name": "OrderlAlchoholIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "bebida",
+              "type": "BebidaSlotValue",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.626289160569.1188812674429"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.197763135278.777648123472",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Cuantas cajas deseas?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Cuantas cajas te gustaría recibir"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1352392906182.876738286032",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "En que calle te gustaría recibir el pedido"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1352392906182.211969193767",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qué numero?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Cuál es el numero?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1352392906182.1239817862536",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Cuál es la ciudad?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Qué Ciudad?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1352392906182",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Genial, solo quiero estar seguro que es en {calle} {numero} .ubicado en {ciudad}"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.50283665030.54430202611",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qué producto buscas?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.626289160569.1188812674429",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qué bebida estas buscando?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "10"
+}
